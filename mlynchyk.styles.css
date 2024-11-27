@@ -1,0 +1,93 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    color: #222;
+    background-color: #f9f9f9;
+}
+
+img, picture, video {
+    display: block;
+    max-width: 100%;
+}
+
+/* VARIABLES */
+:root {
+    --red: #760029;
+    --lime-green: #AED90B;
+    --yellow: #FCD30D;
+    --dark-gray: #222;
+    --light-gray: #eaeaea;
+    --blue: #1EB8FC;
+}
+
+/* HEADER, FOOTER, MAIN */
+header, footer {
+    padding: 1rem;
+    background-color: var(--lime-green);
+    color: var(--dark-gray);
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* SECTIONS */
+section {
+    padding: 1rem;
+    background-color: var(--yellow);
+    border: 1px solid var(--light-gray);
+}
+
+section h2 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        background-color: var(--blue);
+        color: var(--light-gray);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-gray);
+        color: var(--light-gray);
+    }
+
+    header, footer {
+        background-color: #444;
+        color: #eee;
+    }
+}
